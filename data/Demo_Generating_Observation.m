@@ -1,0 +1,20 @@
+% MSI_name1 = 'MSI_beers'; %% TNN PSNR= 31.2315; 
+MSI_name1 = 'MSI_pompoms'; %% TNN PSNR= 31.2315; 
+
+load(MSI_name1);
+% X = X(:,:,1:30); 
+X = X/max(X(:));
+rng('default');
+sample_ratio = 0.20 ;
+fprintf('=== The sample ratio is %4.2f ===\n', sample_ratio);
+Y_tensorT = X;
+Ndim      = ndims(Y_tensorT);
+Nway      = size(Y_tensorT);
+Omega     = find(rand(prod(Nway),1)<sample_ratio);
+Y_tensor0 = zeros(Nway);
+Y_tensor0(Omega) = Y_tensorT(Omega);
+mask = zeros(Nway);
+mask(Omega) = 1;  
+save_filename = [MSI_name1, num2str(100*sample_ratio)];
+X0 = Y_tensor0; 
+save(save_filename, 'X', 'X0','Y_tensor0', 'sample_ratio', 'mask');
