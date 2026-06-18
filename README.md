@@ -12,7 +12,7 @@
 If you find this code helpful, please kindly cite:
 ```bibtex
 @ARTICLE{NICoTN,
-  author={Liu, Sheng and Zhao, Xi-Le, Jiang Qin, and Ng, Michael},
+  author={Liu, Sheng and Zhao, Xi-Le and Jiang, Qin and Ng, Michael},
   journal={SIAM Journal on Imaging Sciencesg}, 
   title={Empowering Tensor Network Decompositions by Nonlinear and Incompatible Tensor Contraction}, 
   year={2026},
